@@ -88,7 +88,11 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+let ticketPriceTotal = runners.reduce(function(accumulator, currentValue){
+    return accumulator + currentValue.donation;
+}, 0);
+
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -96,6 +100,40 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// The location of the race has changed a week before the race.  In order to notify the runners, we need to compile a list of email addresses of all participants in order to notify them of the new location.  Create a new array with all email addresses from the list of runners.
+
+const emails = []; 
+const emailMaker = function(arr){
+    
+    arr.forEach(function(currentValue){
+    emails.push(currentValue.email);
+    });
+}
+
+emailMaker(runners);
+console.log(emails);
+
+
 // Problem 2
+// All employees from the company Skinix had to work overtime during the race.  Compile a new list of all the information from the runners that does not include the employees from Skinix who are not attending the race.
+
+let attendees = runners.filter(function(currentValue){
+    return currentValue.company_name !== "Skinix";
+})
+
+console.log(attendees);
 
 // Problem 3
+
+//We have decided that we want to have the runners start the race in two separate groups.  Runners with an even i.d. number will be in group and runners with an odd i.d. will be in another group.  Compile a two separate lists for all information of runners in each group.
+
+
+let evenRunners = runners.filter(function(currentValue){
+    return currentValue.id % 2 === 0;
+});
+
+let oddRunners = runners.filter(function(currentValue){
+    return currentValue.id % 2 !== 0;
+});
+console.log(evenRunners);
+console.log(oddRunners);

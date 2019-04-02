@@ -79,7 +79,7 @@ console.log(multiplyNums(6, 7, multiply));
 // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 function contains(item, list, cb) {
-  return cb(list, item)
+  return cb(list, item);
 }
 
 const check = function(list, item){
