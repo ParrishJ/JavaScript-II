@@ -115,7 +115,7 @@ console.log(emails);
 
 
 // Problem 2
-// All employees from the company Skinix had to work overtime during the race.  Compile a new list of all the information from the runners that does not include the employees from Skinix who are not attending the race.
+// All employees from the company Skinix have to work overtime during the race.  Compile a new list of all the information from the runners that does not include the employees from Skinix who are not attending the race.
 
 let attendees = runners.filter(function(currentValue){
     return currentValue.company_name !== "Skinix";
